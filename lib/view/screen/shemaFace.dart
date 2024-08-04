@@ -187,7 +187,7 @@ Container(
           
           ],);
               }), 
-              SizedBox(width:30),
+              SizedBox(width:13),
 
 
 

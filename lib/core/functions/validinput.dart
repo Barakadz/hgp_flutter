@@ -11,11 +11,29 @@ validInput(String val, int min, int max, String type) {
     }
   }
 
-  if (type == "largeur_porte") {
+ if (type == "largeur_porte") {
     if (val.isEmpty) {
       return "largeur_porte".tr;
     }
   }
+
+
+ if (type == "montant") {
+    if (val.isEmpty) {
+      return "depart dpot etre champ obligatoire";
+    }
+    if (double.parse(val) > 60) {
+      return "valeur maximal est 60 cm";
+    }
+    //if not email
+    /*if (!GetUtils.isNumericOnly(val)) {
+      return "Hauteur doit étre un nombre";
+    }*/
+  }
+
+
+
+
 
   if (type == "hauteur_porte") {
     if (val.isEmpty) {

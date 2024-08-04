@@ -16,6 +16,7 @@ class CustomTextFormAuth extends GetView<OnBoardingControllerImp> {
   final bool? obsucureText;
 
   final String? sufixtext;
+  final void Function(String)? onChanged;
 
   const CustomTextFormAuth({
     Key? key,
@@ -27,6 +28,8 @@ class CustomTextFormAuth extends GetView<OnBoardingControllerImp> {
     required this.isNumber,
     this.obsucureText,
     this.sufixtext,
+        this.onChanged,
+
   }) : super(key: key);
 
   @override
@@ -40,6 +43,7 @@ class CustomTextFormAuth extends GetView<OnBoardingControllerImp> {
             //ida kan inNumber == false
             : TextInputType.text,
         validator: valid,
+        onChanged: onChanged,
         cursorColor: AppColor.primaryColor,
         controller: mycontroller,
         obscureText: obsucureText == null ? false : true,
